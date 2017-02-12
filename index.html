@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>What Philosopher are You?</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>What Philosopher are You?</h1>
+		
+	<div class="hidden">
+		<h2>What is Art for?</h2>
+		<ul>	
+			<li><input type="radio" name="ans-1" value="1"><label for="ans-1">A catharis for our emotions</label></li>
+			<li><input type="radio" name="ans-1" value="2"><label for="ans-2">To embody the most ethical ideas</label></li>
+			<li><input type="radio" name="ans-1" value="3"><label for="ans-3">To teach us to be our 'super' selves</label></li>
+			<li><input type="radio" name="ans-1" value="4"><label for="ans-4">For expressing what words can never fully do</label></li>
+		</ul>
+		<p> 1 of 5</p>
+	</div>
+	<div class="hidden">
+		<h2>Which pastime seems appealing to you?</h2>
+		<ul>
+			<li><input type="radio" name="ans-2" value="1"><label for="ans-1">Backgammon</label></li>
+			<li><input type="radio" name="ans-2" value="2"><label for="ans-2">Dinner parties</label></li>
+			<li><input type="radio" name="ans-2" value="3"><label for="ans-3">Reclining in a chair with a glass of milk</label></li>
+			<li><input type="radio" name="ans-2" value="4"><label for="ans-4">Billards</label></li>
+		</ul>
+		<p> 2 of 5</p>
+	</div>
+	<div class="hidden">
+		<h2>What was your experience in school?</h2>
+		<ul>
+			<li><input type="radio" name="ans-3" value="1"><label for="ans-1">It was a total bore</label></li>
+			<li><input type="radio" name="ans-3" value="2"><label for="ans-2">I excelled academically</label></li>
+			<li><input type="radio" name="ans-3" value="3"><label for="ans-3">I plugged along and my persistance paid off</label></li>
+			<li><input type="radio" name="ans-3" value="4"><label for="ans-4">I was a slow learner</label></li>
+		</ul>
+		<p> 3 of 5</p>		
+	</div>
+	<div class="hidden">
+		<h2>What is reason for?</h2>
+		<ul>
+			<li><input type="radio" name="ans-3" value="1"><label for="ans-1">Reason is a slave to the emotions</label></li>
+			<li><input type="radio" name="ans-3" value="2"><label for="ans-2">To help us make moral choices</label></li>
+			<li><input type="radio" name="ans-3" value="3"><label for="ans-3">To give understanding to the emotions</label></li>
+			<li><input type="radio" name="ans-3" value="4"><label for="ans-4">Reason is faulty. We privelege certain ideas over others</label></li>
+		</ul>
+		<p> 4 of 5</p>		
+	</div>
+	<div class="hidden">
+		<h2>How has your love life been?</h2>
+		<ul>
+			<li><input type="radio" name="ans-3" value="1"><label for="ans-1">My interests lie elsewhere</label></li>
+			<li><input type="radio" name="ans-3" value="2"><label for="ans-2">I had a couple people I was seeing but nothing came of it</label></li>
+			<li><input type="radio" name="ans-3" value="3"><label for="ans-3">Kinda feelng jaded about love right now</label></li>
+			<li><input type="radio" name="ans-3" value="4"><label for="ans-4">I've never had a shortage of admirers</label></li>
+		</ul>
+		<p> 5 of 5</p>		
+	</div>
+	<div class="finalscore hidden">
+		<h2> Your final score: <span class="score"></span></h2>
+	</div>
+	<div class= "buttons">
+		<button id= 'begin' type="submit">Begin</button>
+		<button id= "next" class="hidden" type="submit">Next</button>
+		<button id= "start-over" class="hidden" type="submit">Start Over</button>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
