@@ -38,6 +38,8 @@ function philosopher(){
 //--next button listener 
 
 $(document).ready(function() {
+	//add question data to document
+	//run testJson function
 	$('#begin').click(function(){
 		quizTotal = 0;
 		$('div').first().removeClass('hidden').addClass('show');
@@ -68,3 +70,31 @@ $(document).ready(function() {
 		$(this).toggleClass('hidden');
 	});
 })
+function testJson(){
+	let json = [{
+		question: "What is Art for?",
+		answer: 1,
+		options: ["To embody the most ethical ideas", "To teach us to be our 'super' selves", "To teach us to be our 'super' selves", "For expressing what words can never fully do"],
+	}];
+	for(var i = 0; i < json.length; i++) {
+		var question = json[i];
+		var html = createQuestion(question, i);
+		$('body').append(html);
+		
+	}
+}
+function createQuestion(questionJson, index){
+	return `
+		<div class="">
+			<h2> ${questionJson.question} </h2>
+			<ul>	
+				<li><input type="radio" name="ans-${index}" value="1"><label>${questionJson.options[0]}</label></li>
+				<li><input type="radio" name="ans-${index}" value="2"><label>${questionJson.options[1]}</label></li>
+				<li><input type="radio" name="ans-${index}" value="3"><label>${questionJson.options[2]}</label></li>
+				<li><input type="radio" name="ans-${index}" value="4"><label>${questionJson.options[3]}</label></li>
+			</ul>
+			<p> ${index} of 5</p>
+		</div>
+	`;
+}
+//fix quiz
