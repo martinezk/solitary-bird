@@ -13,7 +13,7 @@ function userChoice(selectedAns){
 //render functions
 
 function displayScore(){
-	if (currentPage > 5){
+	if (currentPage > 3){
 		philosopher();
 		$('.score').text(quizTotal);
 		$('#start-over').removeClass('hidden');
@@ -37,7 +37,7 @@ function philosopher(){
 //--start button listener
 //--next button listener 
 
-$(document).ready(function() {
+/*$(document).ready(function() {
 	//add question data to document
 	//run testJson function
 	$('#begin').click(function(){
@@ -45,7 +45,7 @@ $(document).ready(function() {
 		$('div').first().removeClass('hidden').addClass('show');
 		$('#next').removeClass('hidden');
 		$(this).toggleClass('hidden');
-	});
+	}); 
 	$('#next').click(function(){
 		var value = $('.show input:checked').val();
 		if(value === undefined){
@@ -53,8 +53,6 @@ $(document).ready(function() {
 		} else {
 			value = parseInt(value);
 			userChoice(value);
-			//$('.show').next().removeClass('hidden').addClass('show');
-			//$('.show').first('div').removeClass('show').addClass('hidden');
 			$('.show').removeClass('show').addClass('hidden').next().removeClass('hidden').addClass('show');
 			currentPage++;
 			displayScore();
@@ -69,7 +67,7 @@ $(document).ready(function() {
 		$('#begin').toggleClass('hidden');
 		$(this).toggleClass('hidden');
 	});
-})
+})*/
 function displayQuestion(){
 	let json = [{
 		question: "What is Art for?",
@@ -90,14 +88,13 @@ function displayQuestion(){
 	for(var i = 0; i < json.length; i++) {
 		var question = json[i];
 		var html = createQuestion(question, i);
-		$('.questions').append(html);
-		
+		$('.quiz').append(html);
 	}
 }
 
 function createQuestion(questionJson, index){
 	return `
-		<div class="">
+		<div class="questions hidden">
 			<h2> ${questionJson.question} </h2>
 			<ul>	
 				<li><input type="radio" name="ans-${index}" value="1"><label>${questionJson.options[0]}</label></li>
@@ -105,7 +102,7 @@ function createQuestion(questionJson, index){
 				<li><input type="radio" name="ans-${index}" value="3"><label>${questionJson.options[2]}</label></li>
 				<li><input type="radio" name="ans-${index}" value="4"><label>${questionJson.options[3]}</label></li>
 			</ul>
-			<p> ${index+=1} of 5</p>
+			<p> ${index+=1} of 3</p>
 		</div>
 	`;
 }
@@ -113,6 +110,21 @@ function createQuestion(questionJson, index){
 $(document).ready(function() {
 	$('#begin').click(function(){
 		displayQuestion();
+		$('.questions' ).first().show().addClass('show');
+		$('#next').removeClass('hidden');
+		$(this).toggleClass('hidden');
+	});
+	$('#next').click(function(){
+		var value = $('.show input:checked').val();
+		if(value === undefined){
+			alert("You haven't chosen one!");
+		} else {
+			value = parseInt(value);
+			userChoice(value);
+			$('.show').removeClass('show').hide().addClass('hidden').next().removeClass('hidden').addClass('show');
+			currentPage++;
+			displayScore();
+		}
 	});
 })
 
