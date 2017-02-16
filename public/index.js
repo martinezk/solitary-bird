@@ -70,19 +70,31 @@ $(document).ready(function() {
 		$(this).toggleClass('hidden');
 	});
 })
-function testJson(){
+function displayQuestion(){
 	let json = [{
 		question: "What is Art for?",
 		answer: 1,
-		options: ["To embody the most ethical ideas", "To teach us to be our 'super' selves", "To teach us to be our 'super' selves", "For expressing what words can never fully do"],
-	}];
+		options: ["A catharis for our emotions", "To embody the most ethical ideas", "To teach us to be our 'super' selves", "For expressing what words can never fully do"],
+		},
+		{
+		question: "Which pastime seems appealing to you?",
+		answer: 1,
+		options: ["Backgammon", "Dinner parties", "Reclining in a chair with a glass of milk", "Billards"],
+		},
+		{
+		question: "What is reason for?",
+		answer: 1,
+		options: ["Reason is a slave to the emotions", "To help us make moral choices", "To give understanding to the emotions", "Reason is faulty. We privilege certain ideas over others"],
+		}
+	];
 	for(var i = 0; i < json.length; i++) {
 		var question = json[i];
 		var html = createQuestion(question, i);
-		$('body').append(html);
+		$('.questions').append(html);
 		
 	}
 }
+
 function createQuestion(questionJson, index){
 	return `
 		<div class="">
@@ -93,8 +105,14 @@ function createQuestion(questionJson, index){
 				<li><input type="radio" name="ans-${index}" value="3"><label>${questionJson.options[2]}</label></li>
 				<li><input type="radio" name="ans-${index}" value="4"><label>${questionJson.options[3]}</label></li>
 			</ul>
-			<p> ${index} of 5</p>
+			<p> ${index+=1} of 5</p>
 		</div>
 	`;
 }
-//fix quiz
+
+$(document).ready(function() {
+	$('#begin').click(function(){
+		displayQuestion();
+	});
+})
+
