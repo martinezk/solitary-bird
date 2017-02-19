@@ -33,63 +33,30 @@ function philosopher(){
 	}
 }
 
-//event listenters
-//--start button listener
-//--next button listener 
-
-/*$(document).ready(function() {
-	//add question data to document
-	//run testJson function
-	$('#begin').click(function(){
-		quizTotal = 0;
-		$('div').first().removeClass('hidden').addClass('show');
-		$('#next').removeClass('hidden');
-		$(this).toggleClass('hidden');
-	}); 
-	$('#next').click(function(){
-		var value = $('.show input:checked').val();
-		if(value === undefined){
-			alert("You haven't chosen one!");
-		} else {
-			value = parseInt(value);
-			userChoice(value);
-			$('.show').removeClass('show').addClass('hidden').next().removeClass('hidden').addClass('show');
-			currentPage++;
-			displayScore();
-		}
-	});
-	$('#start-over').click(function(){
-		$('.kant').addClass('hidden');
-		$('.derrida').addClass('hidden');
-		$('.hume').addClass('hidden');
-		$('.nietsche').addClass('hidden');
-		$('.finalscore').removeClass('show').addClass('hidden');
-		$('#begin').toggleClass('hidden');
-		$(this).toggleClass('hidden');
-	});
-})*/
 function displayQuestion(){
-	let json = [{
-		question: "What is Art for?",
-		answer: 1,
-		options: ["A catharis for our emotions", "To embody the most ethical ideas", "To teach us to be our 'super' selves", "For expressing what words can never fully do"],
+	var settings = {
+		url: "questions.json",
+		data: {},
+		dataType: 'json',
+		type: 'GET',
+		success: function(json){
+			for(var i = 0; i < json.length; i++) {
+				var question = json[i];
+				var html = createQuestion(question, i);
+				$('.quiz').append(html);
+			}
+			
+			$('.questions' ).first().show().addClass('show');
+			$('#next').removeClass('hidden');
+			$(this).toggleClass('hidden');
 		},
-		{
-		question: "Which pastime seems appealing to you?",
-		answer: 1,
-		options: ["Backgammon", "Dinner parties", "Reclining in a chair with a glass of milk", "Billards"],
-		},
-		{
-		question: "What is reason for?",
-		answer: 1,
-		options: ["Reason is a slave to the emotions", "To help us make moral choices", "To give understanding to the emotions", "Reason is faulty. We privilege certain ideas over others"],
+		error: function(){
+			debugger;
 		}
-	];
-	for(var i = 0; i < json.length; i++) {
-		var question = json[i];
-		var html = createQuestion(question, i);
-		$('.quiz').append(html);
-	}
+	};
+	$.ajax(settings);
+	
+
 }
 
 function createQuestion(questionJson, index){
@@ -110,9 +77,6 @@ function createQuestion(questionJson, index){
 $(document).ready(function() {
 	$('#begin').click(function(){
 		displayQuestion();
-		$('.questions' ).first().show().addClass('show');
-		$('#next').removeClass('hidden');
-		$(this).toggleClass('hidden');
 	});
 	$('#next').click(function(){
 		var value = $('.show input:checked').val();
@@ -126,5 +90,11 @@ $(document).ready(function() {
 			displayScore();
 		}
 	});
+	/*$('#start-over').click(function(){
+		$('.finalscore').removeClass('show').addClass('hidden');
+		$('#begin').toggleClass('hidden');
+		$(this).toggleClass('hidden');
+	}); */
+	
 })
 
