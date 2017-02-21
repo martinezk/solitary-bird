@@ -14,9 +14,10 @@ function userChoice(selectedAns){
 
 function displayScore(){
 	if (currentPage > 3){
-		alert('Your score is ' + quizTotal);
-		//$('.score').text(quizTotal);
+		//alert('Your score is ' + quizTotal);
+		$('.score').text(quizTotal);
 		$('#start-over').removeClass('hidden');
+		$('.finalscore').removeClass('hidden');
 		$('#next').addClass('hidden');
 	}
 }
@@ -50,7 +51,7 @@ function displayQuestion(){
 			$(this).toggleClass('hidden');
 		},
 		error: function(){
-			alert("Something went wrong.")
+			alert("Something went wrong. Please refresh the page and try again.	")
 		}
 	};
 	$.ajax(settings);
@@ -76,6 +77,7 @@ function createQuestion(questionJson, index){
 $(document).ready(function() {
 	$('#begin').click(function(){
 		displayQuestion();
+		$(this).addClass('hidden');
 	});
 	$('#next').click(function(){
 		var value = $('.show input:checked').val();
@@ -89,11 +91,14 @@ $(document).ready(function() {
 			displayScore();
 		}
 	});
-	/*$('#start-over').click(function(){
+	$('#start-over').click(function(){
+		quizTotal = 0;
+		currentPage = 1;
+		$('.questions').remove();
 		$('.finalscore').removeClass('show').addClass('hidden');
 		$('#begin').toggleClass('hidden');
 		$(this).toggleClass('hidden');
-	}); */
+	});
 	
 })
 
