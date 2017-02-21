@@ -14,8 +14,8 @@ function userChoice(selectedAns){
 
 function displayScore(){
 	if (currentPage > 3){
-		philosopher();
-		$('.score').text(quizTotal);
+		alert('Your score is ' + quizTotal);
+		//$('.score').text(quizTotal);
 		$('#start-over').removeClass('hidden');
 		$('#next').addClass('hidden');
 	}
@@ -44,14 +44,13 @@ function displayQuestion(){
 				var question = json[i];
 				var html = createQuestion(question, i);
 				$('.quiz').append(html);
-			}
-			
+			}	
 			$('.questions' ).first().show().addClass('show');
 			$('#next').removeClass('hidden');
 			$(this).toggleClass('hidden');
 		},
 		error: function(){
-			debugger;
+			alert("Something went wrong.")
 		}
 	};
 	$.ajax(settings);
