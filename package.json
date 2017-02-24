@@ -18,5 +18,8 @@
   "homepage": "https://github.com/martinezk/solitary-bird#readme",
   "dependencies": {
     "express": "^4.14.1"
+  },
+  "devDependencies": {
+    "uuid": "^3.0.1"
   }
 }
