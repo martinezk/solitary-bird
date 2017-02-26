@@ -1,16 +1,16 @@
 [{
 	"question": "What is Art for?",
-	"answer": 1,
-	"options": ["A catharis for our emotions", "To embody the most ethical ideas", "To teach us to be our 'super' selves", "For expressing what words can never fully do"]
+	"correct": 1,
+	"answers": ["A catharis for our emotions", "To embody the most ethical ideas", "To teach us to be our 'super' selves", "For expressing what words can never fully do"]
 	},
 	{
 	"question": "Which pastime seems appealing to you?",
-	"answer": 1,
-	"options": ["Backgammon", "Dinner parties", "Reclining in a chair with a glass of milk", "Billards"]
+	"correct": 1,
+	"answers": ["Backgammon", "Dinner parties", "Reclining in a chair with a glass of milk", "Billards"]
 	},
 	{
 	"question": "What is reason for?",
-	"answer": 1,
-	"options": ["Reason is a slave to the emotions", "To help us make moral choices", "To give understanding to the emotions", "Reason is faulty. We privilege certain ideas over others"]
+	"correct": 1,
+	"answers": ["Reason is a slave to the emotions", "To help us make moral choices", "To give understanding to the emotions", "Reason is faulty. We privilege certain ideas over others"]
 	}
 ]
