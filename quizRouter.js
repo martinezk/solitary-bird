@@ -4,10 +4,6 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
-Quiz.create('How to Train a Dragon');
-Quiz.create('How to Succeed in Business Without Really Trying');
-Quiz.create('How the West Was Won');
-
 router.get('/', (req, res) => {
   res.json(Quiz.get());
 });

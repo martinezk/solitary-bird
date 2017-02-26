@@ -57,15 +57,15 @@ const quizSchema = mongoose.Schema({
 // to generate a human readable string based on the address object
 // we're storing in Mongo.
 // this virtual grabs the most recent grade for a restaurant.
-restaurantSchema.virtual('question').get(function() {
+/*restaurantSchema.virtual('question').get(function() {
   const gradeObj = this.questions.sort((a, b) => {return b.date - a.date})[0] || {};
   return gradeObj.question;
-});
+}); */
 
 // this is an *instance method* which will be available on all instances
 // of the model. This method will be used to return an object that only
 // exposes *some* of the fields we want from the underlying data
-restaurantSchema.methods.apiRepr = function() {
+/*restaurantSchema.methods.apiRepr = function() {
 
   return {
     id: this._id,
@@ -75,10 +75,10 @@ restaurantSchema.methods.apiRepr = function() {
     grade: this.grade,
     address: this.addressString
   };
-}
+} */
 
 // note that all instance methods and virtual properties on our
 // schema must be defined *before* we make the call to `.model`.
-const Restaurant = mongoose.model('Restaurant', restaurantSchema);
+const Quiz = mongoose.model('Quiz', quizSchema);
 
-module.exports = {Restaurant};
+module.exports = {Quiz};
