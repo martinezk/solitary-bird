@@ -35,6 +35,7 @@ function philosopher(){
 }
 
 var QUIZZES_URL = '/quizzes';
+
 function displayQuestion(){
 	var settings = {
 		url: QUIZZES_URL,
@@ -60,6 +61,21 @@ function displayQuestion(){
 	
 
 }
+function displayQuizzes(quizzes){
+	var quizChoices = "";
+	for (var i=0; i< quizzes.length; i++){
+		quizChoices += `<li>${quizzes[i].name}</li>`;
+	}
+	return `
+		<div class="quiz-choices">
+			<ul>
+				${quizChoices}
+			</ul>
+		</div>
+	`;
+}
+
+
 
 function createQuestion(questionJson, index){
 	return `
@@ -80,6 +96,7 @@ $(document).ready(function() {
 	$('#begin').click(function(){
 		displayQuestion();
 		$(this).addClass('hidden');
+		$('.title-home').addClass('hidden');
 	});
 	$('#next').click(function(){
 		var value = $('.show input:checked').val();
