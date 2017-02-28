@@ -34,15 +34,17 @@ function philosopher(){
 	}
 }
 
+var QUIZZES_URL = '/quizzes';
 function displayQuestion(){
 	var settings = {
-		url: "questions.json",
+		url: QUIZZES_URL,
 		data: {},
 		dataType: 'json',
 		type: 'GET',
 		success: function(json){
-			for(var i = 0; i < json.length; i++) {
-				var question = json[i];
+			var quiz = json.quizzes[0];
+			for(var i = 0; i < quiz.questions.length; i++) {
+				var question = quiz.questions[i];
 				var html = createQuestion(question, i);
 				$('.quiz').append(html);
 			}	

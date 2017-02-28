@@ -1,11 +1,17 @@
-const Quiz = require('./models');
+const {Quiz} = require('./models');
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
 router.get('/', (req, res) => {
-  res.json(Quiz.get());
+  Quiz
+    .findOne()
+    .then(quiz => res.json(quiz))
+    .catch(err => {
+        console.error(err)
+        res.status(500).json({message: 'Something went wrong'})}
+    );
 });
 
 router.put('/:id', jsonParser, (req, res) => {
