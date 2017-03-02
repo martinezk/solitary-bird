@@ -82,10 +82,10 @@ function createQuestion(questionJson, index){
 		<div class="questions hidden">
 			<h2> ${questionJson.question} </h2>
 			<ul>	
-				<li><input type="radio" name="ans-${index}" value="1"><label>${questionJson.answers[0]}</label></li>
-				<li><input type="radio" name="ans-${index}" value="2"><label>${questionJson.answers[1]}</label></li>
-				<li><input type="radio" name="ans-${index}" value="3"><label>${questionJson.answers[2]}</label></li>
-				<li><input type="radio" name="ans-${index}" value="4"><label>${questionJson.answers[3]}</label></li>
+				<li class= "answers"><input type="radio" name="ans-${index}" value="1"><label>${questionJson.answers[0]}</label></li>
+				<li class= "answers"><input type="radio" name="ans-${index}" value="2"><label>${questionJson.answers[1]}</label></li>
+				<li class= "answers"><input type="radio" name="ans-${index}" value="3"><label>${questionJson.answers[2]}</label></li>
+				<li class= "answers"><input type="radio" name="ans-${index}" value="4"><label>${questionJson.answers[3]}</label></li>
 			</ul>
 			<p> ${index+=1} of 3</p>
 		</div>
@@ -93,6 +93,9 @@ function createQuestion(questionJson, index){
 }
 
 $(document).ready(function() {
+	$("#menu").click(function(){
+		$(".nav").toggleClass("hidden");
+	});
 	$('#begin').click(function(){
 		displayQuestion();
 		$(this).addClass('hidden');

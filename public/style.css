@@ -1,11 +1,12 @@
 *{
-	font-family: Sans-serif;
-	margin: auto;
-	
+	margin: 0;
+	padding: 0;
 }
 body {
 	background-color: #FEE071;
+	font-family: Sans-serif;
 }
+
 .title-home{
 	width: 500px;
 	margin:0 auto;
@@ -15,7 +16,7 @@ body {
 header {
 	font-family: 'Special Elite', cursive;	
 }
-li{
+.answers {
 	list-style-type: none;
 }
 h1 {
@@ -36,4 +37,67 @@ h1 {
 }
 .home img {
 	text-align: center;
+}
+
+/*ul {
+	width:33%;
+	list-style:none;
+	background: #FFFFFF;
+}*/
+
+/*li {
+	background: #FFFFFF;
+}
+li:last-child {
+	border-right:none;
+}
+*/
+li a {
+	display: block;
+	width:80%;
+	background:#FFFFFF;
+	padding:4% 10%;
+	font-size:1.35em;
+	text-decoration: none;
+	color: #4A4A4A;
+}
+
+
+@media screen and (max-width: 768px) {
+	#menu {
+		width:2.4em;
+		display: block;
+		background:#FEE071;
+		font-size:2.3em;
+		text-align: center;
+		
+	}
+	.js {
+		display: none;
+	}
+	ul {
+		width:100%;
+		list-style:none;
+	}
+	li {
+		width:100%;
+		border-right:none;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	#menu {
+		width:2.4em;
+		display: block;
+		background: #FEE071;
+		font-size:2.3em;
+		text-align: center;
+	}
+	.js {
+		display: none;
+	}
+	ul {
+		width:33%;
+		list-style:none;
+	}
 }
