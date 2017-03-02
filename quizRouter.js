@@ -7,7 +7,9 @@ const jsonParser = bodyParser.json();
 router.get('/', (req, res) => {
   Quiz
     .findOne()
-    .then(quiz => res.json(quiz))
+    .then(quiz => {
+		res.json(quiz)
+	})
     .catch(err => {
         console.error(err)
         res.status(500).json({message: 'Something went wrong'})}
