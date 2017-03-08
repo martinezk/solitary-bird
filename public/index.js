@@ -35,44 +35,48 @@ function philosopher(){
 }
 
 var QUIZZES_URL = '/quizzes';
+var QUIZZES = [];
 
-function displayQuestion(){
+function displayQuizQuestions(quizIndex){
+	var quiz = QUIZZES[quizIndex];
+	for(var i = 0; i < quiz.questions.length; i++) {
+		var question = quiz.questions[i];
+		var html = createQuestion(question, i);
+		$('.quiz').append(html);
+	}	
+	$('.questions' ).first().show().addClass('show');
+	$('#next').removeClass('hidden');
+	$(this).toggleClass('hidden');
+};
+
+function getQuizzes(){
 	var settings = {
 		url: QUIZZES_URL,
 		data: {},
 		dataType: 'json',
 		type: 'GET',
 		success: function(json){
-			var quiz = json.quizzes[0];
-			for(var i = 0; i < quiz.questions.length; i++) {
-				var question = quiz.questions[i];
-				var html = createQuestion(question, i);
-				$('.quiz').append(html);
-			}	
-			$('.questions' ).first().show().addClass('show');
-			$('#next').removeClass('hidden');
-			$(this).toggleClass('hidden');
+			QUIZZES = json.quizzes;
+			displayQuizzes(QUIZZES);
 		},
 		error: function(){
 			alert("Something went wrong. Please refresh the page and try again.	")
 		}
 	};
 	$.ajax(settings);
-	
-
 }
+
 function displayQuizzes(quizzes){
 	var quizChoices = "";
 	for (var i=0; i< quizzes.length; i++){
-		quizChoices += `<li>${quizzes[i].name}</li>`;
+		quizChoices += `<button class= "begin" type="submit" onclick="displayQuizQuestions(${i})">${quizzes[i].name}</button>`;
 	}
-	return `
+	var html = `
 		<div class="quiz-choices">
-			<ul>
-				${quizChoices}
-			</ul>
+			${quizChoices}
 		</div>
 	`;
+	$('.buttons').append(html);
 }
 
 
@@ -93,11 +97,11 @@ function createQuestion(questionJson, index){
 }
 
 $(document).ready(function() {
+	getQuizzes();
 	$("#menu").click(function(){
 		$(".nav").toggleClass("hidden");
 	});
-	$('#begin').click(function(){
-		displayQuestion();
+	$('.begin').click(function(){
 		$(this).addClass('hidden');
 		$('.title-home').addClass('hidden');
 	});
@@ -118,7 +122,7 @@ $(document).ready(function() {
 		currentPage = 1;
 		$('.questions').remove();
 		$('.finalscore').removeClass('show').addClass('hidden');
-		$('#begin').toggleClass('hidden');
+		$('.begin').toggleClass('hidden');
 		$(this).toggleClass('hidden');
 	});
 	

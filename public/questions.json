@@ -1,5 +1,6 @@
 {
-	"quizzes":[{
+	"quizzes":[
+	{
 		"name": "How to Train Your Dragon",
 		"questions": [{
 			"question": "What is Art for?",
@@ -16,5 +17,25 @@
 			"correct": 1,
 			"answers": ["Reason is a slave to the emotions", "To help us make moral choices", "To give understanding to the emotions", "Reason is faulty. We privilege certain ideas over others"]
 		}]
-	}]
+	}
+	{
+		"name": "Would you pass a Civics Test?",
+		"questions": [{
+			"question": "Who is the Chief Justice of the United States now??",
+			"correct": 1,
+			"answers": ["Barack Obama", "John G. Roberts, Jr", "Joe Biden", "Anthony Kennedy"]
+			},
+			{
+			"question": "When was the Constitution Written?",
+			"correct": 1,
+			"answers": ["1787", "1776", "1789", "1790"]
+			},
+			{
+			"question": "Name one American Indian tribe in the United States.?",
+			"correct": 1,
+			"answers": ["Cherokee", "Celts", "Slavs", "Zawi Chemi"]
+		}]
+	}
+	
+ ]
 }
