@@ -66,6 +66,12 @@ function getQuizzes(){
 	$.ajax(settings);
 }
 
+function hideButtons(){	
+	$('.begin').click(function(){
+		$('.begin').addClass("hidden");
+		$('.title-home').addClass('hidden');
+	});}
+	
 function displayQuizzes(quizzes){
 	var quizChoices = "";
 	for (var i=0; i< quizzes.length; i++){
@@ -77,9 +83,8 @@ function displayQuizzes(quizzes){
 		</div>
 	`;
 	$('.buttons').append(html);
+	hideButtons();
 }
-
-
 
 function createQuestion(questionJson, index){
 	return `
@@ -101,10 +106,7 @@ $(document).ready(function() {
 	$("#menu").click(function(){
 		$(".nav").toggleClass("hidden");
 	});
-	$('.begin').click(function(){
-		$(this).addClass('hidden');
-		$('.title-home').addClass('hidden');
-	});
+
 	$('#next').click(function(){
 		var value = $('.show input:checked').val();
 		if(value === undefined){
