@@ -22,10 +22,11 @@ describe('Quizzes', function() {
       .then(function(res) {
         res.should.have.status(200);
         res.should.be.json;
-        res.body.should.be.a('array');
-        res.body.length.should.be.at.least(1);
-        const expectedKeys = ['id', 'name', 'questions'];
-        res.body.forEach(function(item) {
+        res.body.should.be.a('object');
+		res.body.quizzes.should.be.a('array');
+        res.body.quizzes.length.should.be.at.least(1);
+        const expectedKeys = ['name', 'questions'];
+        res.body.quizzes.forEach(function(item) {
           item.should.be.a('object');
           item.should.include.keys(expectedKeys);
         });
