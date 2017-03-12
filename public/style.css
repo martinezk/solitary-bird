@@ -40,11 +40,9 @@ h1 {
 	text-align: center;
 }
 
-/*ul {
-	width:33%;
-	list-style:none;
-	background: #FFFFFF;
-}*/
+.main ul {
+	position:absolute;
+}
 
 /*li {
 	background: #FFFFFF;
