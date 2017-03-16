@@ -56,7 +56,7 @@ function getQuizzes(){
 		dataType: 'json',
 		type: 'GET',
 		success: function(json){
-			QUIZZES = json.quizzes;
+			QUIZZES = json;
 			displayQuizzes(QUIZZES);
 		},
 		error: function(){

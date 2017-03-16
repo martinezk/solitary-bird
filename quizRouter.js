@@ -6,7 +6,8 @@ const jsonParser = bodyParser.json();
 
 router.get('/', (req, res) => {
   Quiz
-    .findOne()
+    .find()
+	.exec()
     .then(quiz => {
 		res.json(quiz)
 	})
