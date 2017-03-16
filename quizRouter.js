@@ -41,5 +41,42 @@ router.put('/:id', jsonParser, (req, res) => {
   });
   res.json(updatedItem);
 })
+router.post('/', jsonParser,(req, res) => {
+	console.log(req.body);
+	const requiredFields = ['name', 'questions'];
+	for (let i=0; i<requiredFields.length; i++) {
+		const field = requiredFields[i];
+		if (!(field in req.body)) {
+			const message = `Missing \`${field}\` in request body`
+			console.error(message);
+			return res.status(400).send(message);
+		}
+    }
+   Quiz
+    .create({
+		name: req.body.name,
+		questions: req.body.questions
+	})
+    .then(quiz => {
+		res.json(quiz)
+	})
+    .catch(err => {
+        console.error(err)
+        res.status(500).json({message: 'Something went wrong'})
+	});
+}); 
+
+router.delete('/:id', jsonParser,(req, res) => {
+ /* Quiz
+    .findOne()
+    .then(quiz => {
+		res.json(quiz)
+	})
+    .catch(err => {
+        console.error(err)
+        res.status(500).json({message: 'Something went wrong'})}
+    );*/
+	res.send(req.params.id);
+}); 
 
 module.exports = router;
