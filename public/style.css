@@ -18,6 +18,7 @@ header {
 }
 .answers {
 	list-style-type: none;
+
 }
 h1 {
 	text-align: center;
@@ -36,12 +37,20 @@ h1 {
 	text-align: center;
 	margin: 10px;
 }
-.home img {
-	text-align: center;
+img.home {
+	margin-left:33%
 }
 
 .main ul {
 	position:absolute;
+}
+button{
+	width: 100px;
+    background-color: black;
+    color: white;
+    border: 1px black solid;
+    border-radius: 5px;
+    height: 80px;
 }
 
 /*li {

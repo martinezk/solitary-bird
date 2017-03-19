@@ -67,17 +67,12 @@ router.post('/', jsonParser,(req, res) => {
 	});
 }); 
 
-router.delete('/:id', jsonParser,(req, res) => {
- /* Quiz
-    .findOne()
-    .then(quiz => {
-		res.json(quiz)
-	})
-    .catch(err => {
-        console.error(err)
-        res.status(500).json({message: 'Something went wrong'})}
-    );*/
-	res.send(req.params.id);
+router.delete('/:id',(req, res) => {
+   Quiz
+    .findByIdAndRemove(req.params.id)
+	.exec()
+    .then(() => res.status(204).end())
+    .catch(err => res.status(500).json({message: 'Internal server error'}));
 }); 
 
 module.exports = router;
