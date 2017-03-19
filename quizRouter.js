@@ -35,12 +35,13 @@ router.put('/:id', jsonParser, (req, res) => {
     return res.status(400).send(message);
   }
   console.log(`Updating quiz item \`${req.params.id}\``);
-   const updatedItem = Quiz.update({
+   Quiz.update({
     id: req.params.id,
     name: req.body.name,
-    checked: req.body.checked
-  });
-  res.json(updatedItem);
+   })
+  	.exec()
+    .then(() => res.status(204).end())
+    .catch(err => res.status(500).json({message: 'Internal server error'}));
 })
 router.post('/', jsonParser,(req, res) => {
 	console.log(req.body);
