@@ -1,11 +1,15 @@
-var express = require('express');
+const express = require('express');
 const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
-const {PORT, DATABASE_URL} = require('./config');
-var app = express();
-app.use(express.static('public'));
+
+const {DATABASE_URL, PORT} = require('./config');
 const quizRouter = require('./quizRouter');
+
+const app = express();
+app.use(express.static('public'));
+
 app.use('/quizzes', quizRouter);
+
+mongoose.Promise = global.Promise;
 
 let server;
 

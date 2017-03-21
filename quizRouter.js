@@ -1,8 +1,10 @@
-const {Quiz} = require('./models');
 const express = require('express');
 const router = express.Router();
+
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
+
+const {Quiz} = require('./models');
 
 router.get('/', (req, res) => {
   Quiz
@@ -18,7 +20,7 @@ router.get('/', (req, res) => {
 });
 
 router.put('/:id', jsonParser, (req, res) => {
-  const requiredFields = ['name'];
+  const requiredFields = ['name', 'questions'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -44,7 +46,6 @@ router.put('/:id', jsonParser, (req, res) => {
     .catch(err => res.status(500).json({message: 'Internal server error'}));
 })
 router.post('/', jsonParser,(req, res) => {
-	console.log(req.body);
 	const requiredFields = ['name', 'questions'];
 	for (let i=0; i<requiredFields.length; i++) {
 		const field = requiredFields[i];
