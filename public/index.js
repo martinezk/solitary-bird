@@ -14,23 +14,10 @@ function userChoice(selectedAns){
 
 function displayScore(){
 	if (currentPage > 3){
-		//alert('Your score is ' + quizTotal);
 		$('.score').text(quizTotal);
 		$('#start-over').removeClass('hidden');
 		$('.finalscore').removeClass('hidden');
 		$('#next').addClass('hidden');
-	}
-}
-
-function philosopher(){
-	if (quizTotal < 9){
-		$('.hume').removeClass('hidden');
-	} else if (8 < quizTotal < 11){
-		$('.kant').removeClass('hidden');
-	} else if (10 < quizTotal < 15 ){
-		$('.nietsche').removeClass('hidden');
-	} else {
-		$('.derrida').removeClass('hidden');
 	}
 }
 
@@ -69,12 +56,12 @@ function getQuizzes(){
 function hideButtons(){	
 	$('.begin').click(function(){
 		$('.begin').addClass("hidden");
-		$('.title-home').addClass('hidden');
+		$('h1').addClass('hidden');
 	});}
 	
 function displayQuizzes(quizzes){
 	var quizChoices = "";
-	for (var i=0; i< quizzes.length; i++){
+	for (var i=0; i<3; i++){
 		quizChoices += `<button class= "begin" type="submit" onclick="displayQuizQuestions(${i})">${quizzes[i].name}</button>`;
 	}
 	var html = `
@@ -83,12 +70,12 @@ function displayQuizzes(quizzes){
 		</div>
 	`;
 	$('.buttons').append(html);
-	hideButtons();
+	$('.buttons').addClass('button-style');
 }
 
 function createQuestion(questionJson, index){
 	return `
-		<div class="questions hidden">
+		<div class="questions hidden question-style">
 			<h2> ${questionJson.question} </h2>
 			<ul>	
 				<li class= "answers"><input type="radio" name="ans-${index}" value="1"><label>${questionJson.answers[0]}</label></li>
@@ -105,8 +92,10 @@ $(document).ready(function() {
 	getQuizzes();
 	$("#menu").click(function(){
 		$(".nav").toggleClass("hidden");
+		$("buttons.begin").toggleClass("hidden");
+		$("#featured").toggleClass("hidden");
 	});
-
+	
 	$('#next').click(function(){
 		var value = $('.show input:checked').val();
 		if(value === undefined){
@@ -127,18 +116,5 @@ $(document).ready(function() {
 		$('.begin').toggleClass('hidden');
 		$(this).toggleClass('hidden');
 	});
-	/*$(document).ready(function() {
-				$('#nav-toggle').click(function(event) {
-					$(this).toggleClass('active');
-					if ($('#nav-toggle').hasClass('active')) 
-					{
-						$('#nav').show();
-					} 
-					else
-					{
-						$('#nav').hide();
-					};
-				});
-	});*/
 })
 

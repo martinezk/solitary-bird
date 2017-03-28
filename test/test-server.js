@@ -31,7 +31,7 @@ describe('Quizzes', function() {
 			});
 		  });
 	});
-	
+
    it('should add a quiz on POST', function() {
 		const newQuiz =
 		{
@@ -65,38 +65,6 @@ describe('Quizzes', function() {
 			res.body.questions.should.be.a('array');
 			res.body._id.should.not.be.null;
 		  });
-	});/*
-	it('should update a quiz on PUT', function() {
-	 const updateData = {
-      name: 'foo?',
-      questions: 'yes or no?'
-    };
-	 return chai.request(app)
-	 .get('/quizzes')
-     .then(function(res) {
-        updateData.id = res.body[0].id;
-	 return chai.request(app)
-          .put(`/quizzes/${updateData.id}`)
-          .send(updateData);
-     }) 
-	 .then(function(res) {
-        res.should.have.status(200);
-        res.should.be.json;
-        res.body.should.be.a('object');
-        res.body.should.deep.equal(updateData);
-      });
-	});
-	it('should delete a quiz on DELETE', function() {
-      return chai.request(app)
-	   .get('/quizzes')
-	   .then(function(res) {
-	      return chai.request(app)
-		  .delete(`/quizzes/${res.body[0].id}`);
-      })
-      .then(function(res) {
-        res.should.have.status(204);
-      });
-  });*/
+	}); 
 });
-
 
