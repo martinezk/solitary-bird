@@ -2,10 +2,9 @@ html,
 body {
   font-family: sans-serif;
   font-size: 1em;
-  line-height: 1.4;
   height: 100%;
-  margin: 0 auto;
   background-color: #FEE071;
+  margin: 0;
 }
 
 a {
@@ -39,11 +38,13 @@ a {
 .main {
   font-family: "Special Elite", cursive;
   text-align: center;
-  padding-top: 60px;
+  padding-top: 66px;
   width: 300px;
   height: 180px;
   margin-left: auto;
   margin-right: auto;
+  border-bottom: 1px solid black;
+  width: 100%;
 }
 .end{
   margin-top: 40px;
@@ -55,8 +56,10 @@ a {
   margin-right: auto;
 }
 .quiz-choices{
-  width: 600px;
+  width: 100%;
   text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }
 .question-style{
   display: block;
@@ -77,10 +80,6 @@ a {
 
 .menu a:hover {
   color: #c5cae9;
-}
-
-.main {
-  padding-top: 66px;
 }
 
 /* BUTTONS */

@@ -61,7 +61,7 @@ function hideButtons(){
 	
 function displayQuizzes(quizzes){
 	var quizChoices = "";
-	for (var i=0; i<3; i++){
+	for (var i=0; i<quizzes.length; i++){
 		quizChoices += `<button class= "begin" type="submit" onclick="displayQuizQuestions(${i})">${quizzes[i].name}</button>`;
 	}
 	var html = `
