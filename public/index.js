@@ -31,9 +31,9 @@ function displayQuizQuestions(quizIndex){
 		var html = createQuestion(question, i);
 		$('.quiz').append(html);
 	}	
-	$('.questions' ).first().show().addClass('show');
+	$('.questions' ).first().toggleClass('hidden').addClass('show');
 	$('#next').removeClass('hidden');
-	$(this).toggleClass('hidden');
+	hideQuizChoices();
 };
 
 function getQuizzes(){
@@ -53,16 +53,14 @@ function getQuizzes(){
 	$.ajax(settings);
 }
 
-function hideButtons(){	
-	$('.begin').click(function(){
-		$('.begin').addClass("hidden");
-		$('h1').addClass('hidden');
-	});}
+function hideQuizChoices(){	
+	$('.quiz-choices').toggleClass("hidden")
+}
 	
 function displayQuizzes(quizzes){
 	var quizChoices = "";
 	for (var i=0; i<quizzes.length; i++){
-		quizChoices += `<button class= "begin" type="submit" onclick="displayQuizQuestions(${i})">${quizzes[i].name}</button>`;
+		quizChoices += `<div><button class= "begin" type="submit" onclick="displayQuizQuestions(${i})">${quizzes[i].name}</button>`;
 	}
 	var html = `
 		<div class="quiz-choices">
@@ -76,7 +74,7 @@ function displayQuizzes(quizzes){
 function createQuestion(questionJson, index){
 	return `
 		<div class="questions hidden question-style">
-			<h2> ${questionJson.question} </h2>
+			<h2 class="quiz-title"> ${questionJson.question} </h2>
 			<ul>	
 				<li class= "answers"><input type="radio" name="ans-${index}" value="1"><label>${questionJson.answers[0]}</label></li>
 				<li class= "answers"><input type="radio" name="ans-${index}" value="2"><label>${questionJson.answers[1]}</label></li>
@@ -88,14 +86,18 @@ function createQuestion(questionJson, index){
 	`;
 }
 
+function resetQuizzes(){
+	quizTotal = 0;
+		currentPage = 1;
+		$('.questions').remove();
+		$('.finalscore').removeClass('show').addClass('hidden');
+		$('.quiz-choices').removeClass('hidden');
+		$('#start-over').addClass('hidden');
+		$('#next').addClass('hidden');
+}
+
 $(document).ready(function() {
 	getQuizzes();
-	$("#menu").click(function(){
-		$(".nav").toggleClass("hidden");
-		$("buttons.begin").toggleClass("hidden");
-		$("#featured").toggleClass("hidden");
-	});
-	
 	$('#next').click(function(){
 		var value = $('.show input:checked').val();
 		if(value === undefined){
@@ -108,13 +110,10 @@ $(document).ready(function() {
 			displayScore();
 		}
 	});
-	$('#start-over').click(function(){
-		quizTotal = 0;
-		currentPage = 1;
-		$('.questions').remove();
-		$('.finalscore').removeClass('show').addClass('hidden');
-		$('.begin').toggleClass('hidden');
-		$(this).toggleClass('hidden');
-	});
+	$('#start-over').click(resetQuizzes);
+	$('#nav-quizzes').click(resetQuizzes);
+	$('#header__icon').click(function(){
+		$('.links').toggle();
+	})
 })
 

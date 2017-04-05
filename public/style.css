@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: sans-serif;
+  font-family: "Merriweather", cursive;
   font-size: 1em;
   height: 100%;
   background-color: #FEE071;
@@ -10,6 +10,12 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+p {
+    font-size: 15px;
+    font-family: Merriweather, cursive;
+    margin-top: 2px;
+    padding-left: 6px;
 }
 .hidden{
 	display: none;
@@ -23,13 +29,6 @@ a {
   background-color: #000;
 }
 
-.header__logo {
-  font-weight: 700;
-  font-family: "Special Elite", cursive;
-  padding: 0 25px;
-  float: left;
-  line-height: 66px;
-}
  img {  	
   width: 200px;
   height: 110px;
@@ -43,12 +42,9 @@ a {
   height: 180px;
   margin-left: auto;
   margin-right: auto;
-  border-bottom: 1px solid black;
   width: 100%;
 }
 .end{
-  margin-top: 40px;
-  font-family: "Merriweather", cursive;
   text-align: center;
   width: 300px;
   height: 180px;
@@ -61,6 +57,9 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+.quiz-title{
+  color: red;
+}
 .question-style{
   display: block;
   font-family: Merriweather, cursive;
@@ -69,30 +68,23 @@ a {
 }
 /* MENU */
 
-.menu {
-  float: left;
-}
 
-.menu a {
-  padding: 0 10px;
-  font-family: "Merriweather", cursive;
-}
-
-.menu a:hover {
-  color: #c5cae9;
-}
 
 /* BUTTONS */
 .begin{
   display: inline-block;
   background-color: black;
+      border-radius: 10px;
+    border: 2px solid grey;
   color: white;
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 180px;
   margin-top:100px;
   vertical-align: bottom;
   margin-right: 6px;
   margin-left: 6px;
+  background-repeat: no-repeat;
+  background-image: url(https://placekitten.com/200/200?image=13)
 }
 .buttons{
   width: 900px;
@@ -105,7 +97,6 @@ a {
     width:30px;
 		display: inline-block;
 		background:#000;
-    border: 1px solid #fff;
     font-size: 2.3em;
 		text-align: center;
   }
@@ -117,17 +108,11 @@ a {
   }
   .menu a {
     display: block;
-    width: 80%;
     background: #000;
     font-size: 1.35em;
     line-height: 66px;
-    text-decoration: none;
-    color: #fff;
-    font-family: "Merriweather", cursive;
   }
-  .header__logo {
-    margin-left: 80px;
-  }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -135,10 +120,14 @@ a {
     position: absolute;
     display: none;
   }
-  .header__logo{
-    display: none;
-  }
   .menu a{
     line-height: 66px;
+    padding: 0 10px;
+    font-family: "Merriweather", cursive;
   }
+  .menu a:hover {
+    color: #c5cae9;
+}
+
+
 }
