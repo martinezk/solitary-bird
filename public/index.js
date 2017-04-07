@@ -30,10 +30,11 @@ function displayQuizQuestions(quizIndex){
 		var question = quiz.questions[i];
 		var html = createQuestion(question, i);
 		$('.quiz').append(html);
-	}	
+	}
 	$('.questions' ).first().toggleClass('hidden').addClass('show');
 	$('#next').removeClass('hidden');
 	hideQuizChoices();
+	$('.quiz').removeClass('center');
 };
 
 function getQuizzes(){
@@ -54,14 +55,14 @@ function getQuizzes(){
 }
 
 function hideQuizChoices(){	
-	$('.quiz-choices').toggleClass("hidden")
+	$('.quiz-choices').toggleClass("hidden");
 }
 	
 function displayQuizzes(quizzes){
 	var quizChoices = "";
 	for (var i=0; i<quizzes.length; i++){
 		quizChoices += `
-		<button class= "begin" type="submit" onclick="displayQuizQuestions(${i})"><h3>${quizzes[i].name}</h3></button>`;
+		<button class= "begin inline" type="submit" onclick="displayQuizQuestions(${i})"><h3>${quizzes[i].name}</h3></button>`;
 	}
 	var html = `
 		<div class="quiz-choices">
@@ -81,7 +82,7 @@ function createQuestion(questionJson, index){
 				<li class= "answers"><input type="radio" name="ans-${index}" value="3"><label>${questionJson.answers[2]}</label></li>
 				<li class= "answers"><input type="radio" name="ans-${index}" value="4"><label>${questionJson.answers[3]}</label></li>
 			</ul>
-			<p> ${index+=1} of 3</p><
+			<p> ${index+=1} of 3</p>
 		</div>
 	`;
 }

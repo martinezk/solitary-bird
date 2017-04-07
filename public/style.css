@@ -22,9 +22,6 @@ h3{
     font-family: Merriweather, cursive;
     font-size: 15px;
 }
-.hidden{
-	display: none;
-}
 .header {
   position: fixed;
   left: 0;
@@ -35,8 +32,8 @@ h3{
 }
 
  img {  	
-  width: 200px;
-  height: 110px;
+  width: 150px;
+  height: 95px;
  }
 
 .main {
@@ -63,7 +60,15 @@ h3{
 }
 .quiz{
   width: 100%;
+}
+.center{
   text-align: center;
+}
+.hidden{
+	display: none;
+}
+.inline{
+  display: inline-block;
 }
 
 .questions{
@@ -101,7 +106,7 @@ p{
   background-repeat: no-repeat;
   background-image: url(https://placekitten.com/200/200?image=13)
 }
-#next {
+#next, #start-over {
     border: 1px solid black;
     width: 85px;
     font-size: 15px;
