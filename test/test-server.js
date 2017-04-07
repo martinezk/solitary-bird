@@ -71,7 +71,7 @@ describe('Quizzes', function () {
 			});
 	});
 		it('should edit a quiz on PUT', function () {
-			newQuiz.name = "Hello";
+			newQuiz.name = "What Philosopher are You?";
 			return chai.request(app)
 				.put(`/quizzes/${newQuiz.id}`)
 				.set('content-type', 'application/json')
