@@ -60,20 +60,20 @@ function hideQuizChoices(){
 function displayQuizzes(quizzes){
 	var quizChoices = "";
 	for (var i=0; i<quizzes.length; i++){
-		quizChoices += `<div><button class= "begin" type="submit" onclick="displayQuizQuestions(${i})">${quizzes[i].name}</button>`;
+		quizChoices += `
+		<button class= "begin" type="submit" onclick="displayQuizQuestions(${i})"><h3>${quizzes[i].name}</h3></button>`;
 	}
 	var html = `
 		<div class="quiz-choices">
 			${quizChoices}
 		</div>
 	`;
-	$('.buttons').append(html);
-	$('.buttons').addClass('button-style');
+	$('.quiz').append(html);
 }
 
 function createQuestion(questionJson, index){
 	return `
-		<div class="questions hidden question-style">
+		<div class="questions hidden">
 			<h2 class="quiz-title"> ${questionJson.question} </h2>
 			<ul>	
 				<li class= "answers"><input type="radio" name="ans-${index}" value="1"><label>${questionJson.answers[0]}</label></li>
