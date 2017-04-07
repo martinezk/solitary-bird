@@ -59,18 +59,27 @@ h3{
 .quiz-choices{
   margin-left: auto;
   margin-right: auto;
+  display: inline;
 }
 .quiz{
   width: 100%;
+  text-align: center;
 }
-.quiz-title{
-  color: red;
-}
+
 .questions{
-  display: block;
   font-family: Merriweather, cursive;
   font-size: 15px;
   margin-top: 90px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+li{
+  list-style-type: none;
+  padding-bottom:5px;
+}
+p{
+  text-align: center;
 }
 /* MENU */
 
@@ -80,8 +89,8 @@ h3{
 .begin{
   display: inline-block;
   background-color: black;
-      border-radius: 10px;
-    border: 2px solid grey;
+  border-radius: 10px;
+  border: 2px solid grey;
   color: white;
   width: 200px;
   height: 180px;
@@ -92,8 +101,15 @@ h3{
   background-repeat: no-repeat;
   background-image: url(https://placekitten.com/200/200?image=13)
 }
-.buttons{
-  width: 900px;
+#next {
+    border: 1px solid black;
+    width: 85px;
+    font-size: 15px;
+    font-family: Merriweather, cursive;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+    line-height: 30px;
 }
 
 
