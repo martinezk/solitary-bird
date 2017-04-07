@@ -86,7 +86,7 @@ li{
 p{
   text-align: center;
 }
-/* MENU */
+
 
 
 
@@ -140,6 +140,9 @@ p{
     font-size: 1.35em;
     line-height: 66px;
   }
+   .menu a.hidden{
+    display: none;
+   }
 
 }
 
@@ -154,8 +157,10 @@ p{
     font-family: "Merriweather", cursive;
   }
   .menu a:hover {
-    color: #c5cae9;
-}
-
+    color: #c5cae9; 
+  }
+  .menu a.hidden{
+    display: inline-block;
+  }
 
 }

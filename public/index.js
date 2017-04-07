@@ -114,7 +114,7 @@ $(document).ready(function() {
 	$('#start-over').click(resetQuizzes);
 	$('#nav-quizzes').click(resetQuizzes);
 	$('#header__icon').click(function(){
-		$('.links').toggle();
+		$('.links').toggleClass('hidden');
 	})
 })
 
