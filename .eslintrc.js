@@ -6,6 +6,20 @@ module.exports = {
     "parserOptions": {
         "sourceType": "module"
     },
+    "globals": {
+        "require": true,
+        "process": true,
+        "exports": true,
+        "global": true,
+        "$": true,
+        "alert": true,
+        "console": true,
+        "module": true,
+        "it": true,
+        "describe": true,
+        "before": true,
+        "after": true
+    },
     "rules": {
         "indent": [
             "error",

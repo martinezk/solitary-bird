@@ -31,7 +31,7 @@ h3{
   background-color: #000;
 }
 
- img {  	
+ img {      
   width: 150px;
   height: 95px;
  }
@@ -65,7 +65,7 @@ h3{
   text-align: center;
 }
 .hidden{
-	display: none;
+    display: none;
 }
 .inline{
   display: inline-block;
@@ -123,10 +123,10 @@ p{
 @media only screen and (max-width: 768px) {
   #header__icon {
     width:30px;
-		display: inline-block;
-		background:#000;
+        display: inline-block;
+        background:#000;
     font-size: 2.3em;
-		text-align: center;
+        text-align: center;
   }
   .menu {
     position: absolute;
@@ -163,4 +163,4 @@ p{
     display: inline-block;
   }
 
-}
+} 
