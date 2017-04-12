@@ -103,8 +103,8 @@ p{
   vertical-align: bottom;
   margin-right: 6px;
   margin-left: 6px;
-  background-repeat: no-repeat;
-  background-image: url(https://placekitten.com/200/200?image=13)
+  /*background-repeat: no-repeat;
+  background-image: url(https://placekitten.com/200/200?image=13)*/
 }
 #next, #start-over {
     border: 1px solid black;

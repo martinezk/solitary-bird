@@ -34,7 +34,7 @@ function displayQuizQuestions(quizIndex) {
     $('#next').removeClass('hidden');
     hideQuizChoices();
     $('.quiz').removeClass('center');
-};
+}
 
 function getQuizzes() {
     var settings = {
@@ -47,18 +47,18 @@ function getQuizzes() {
             displayQuizzes(QUIZZES);
         },
         error: function () {
-            alert("Something went wrong. Please refresh the page and try again.    ")
+            alert('Something went wrong. Please refresh the page and try again.    ');
         }
     };
     $.ajax(settings);
 }
 
 function hideQuizChoices() {
-    $('.quiz-choices').toggleClass("hidden");
+    $('.quiz-choices').toggleClass('hidden');
 }
 
 function displayQuizzes(quizzes) {
-    var quizChoices = "";
+    var quizChoices = '';
     for (var i = 0; i < quizzes.length; i++) {
         quizChoices += `
         <button class= "begin inline" type="submit" onclick="displayQuizQuestions(${i})"><h3>${quizzes[i].name}</h3></button>`;
@@ -75,7 +75,7 @@ function createQuestion(questionJson, index) {
     return `
         <div class="questions hidden">
             <h2 class="quiz-title"> ${questionJson.question} </h2>
-            <ul>    
+            <ul>
                 <li class= "answers"><input type="radio" name="ans-${index}" value="1"><label>${questionJson.answers[0]}</label></li>
                 <li class= "answers"><input type="radio" name="ans-${index}" value="2"><label>${questionJson.answers[1]}</label></li>
                 <li class= "answers"><input type="radio" name="ans-${index}" value="3"><label>${questionJson.answers[2]}</label></li>
@@ -101,7 +101,7 @@ $(document).ready(function () {
     $('#next').click(function () {
         var value = $('.show input:checked').val();
         if (value === undefined) {
-            alert("You haven't chosen one!");
+            alert('You haven\'t chosen one!');
         } else {
             value = parseInt(value);
             userChoice(value);
@@ -114,6 +114,6 @@ $(document).ready(function () {
     $('#nav-quizzes').click(resetQuizzes);
     $('#header__icon').click(function () {
         $('.links').toggleClass('hidden');
-    })
-})
+    });
+});
 
