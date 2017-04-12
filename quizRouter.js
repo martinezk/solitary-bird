@@ -11,11 +11,11 @@ router.get('/', (req, res) => {
         .find()
         .exec()
         .then(quiz => {
-            res.json(quiz)
+            res.json(quiz);
         })
         .catch(err => {
-            console.error(err)
-            res.status(500).json({ message: 'Something went wrong' })
+            console.error(err);
+            res.status(500).json({ message: 'Something went wrong' });
         }
         );
 }); 
@@ -25,15 +25,13 @@ router.put('/:id', jsonParser, (req, res) => {
     for (let i = 0; i < requiredFields.length; i++) {
         const field = requiredFields[i];
         if (!(field in req.body)) {
-            const message = `Missing \`${field}\` in request body`
+            const message = `Missing \`${field}\` in request body`;
             console.error(message);
             return res.status(400).send(message);
         }
     }
     if (req.params.id !== req.body.id) {
-        const message = (
-            `Request path id (${req.params.id}) and request body id `
-                `(${req.body.id}) must match`);
+        const message = `Request path id (${req.params.id}) and request body id (${req.body.id}) must match`;
         console.error(message);
         return res.status(400).send(message);
     }
@@ -44,14 +42,14 @@ router.put('/:id', jsonParser, (req, res) => {
     })
         .exec()
         .then(() => res.status(204).end())
-        .catch(err => res.status(500).json({ message: 'Internal server error' }));
-})
+        .catch(() => res.status(500).json({ message: 'Internal server error' }));
+});
 router.post('/', jsonParser, (req, res) => {
     const requiredFields = ['name', 'questions'];
     for (let i = 0; i < requiredFields.length; i++) {
         const field = requiredFields[i];
         if (!(field in req.body)) {
-            const message = `Missing \`${field}\` in request body`
+            const message = `Missing \`${field}\` in request body`;
             console.error(message);
             return res.status(400).send(message);
         }
@@ -62,11 +60,11 @@ router.post('/', jsonParser, (req, res) => {
             questions: req.body.questions
         })
         .then(quiz => {
-            res.json(quiz)
+            res.json(quiz);
         })
         .catch(err => {
-            console.error(err)
-            res.status(500).json({ message: 'Something went wrong' })
+            console.error(err);
+            res.status(500).json({ message: 'Something went wrong' });
         });
 });
 
@@ -75,7 +73,7 @@ router.delete('/:id', (req, res) => {
         .findByIdAndRemove(req.params.id)
         .exec()
         .then(() => res.status(204).end())
-        .catch(err => res.status(500).json({ message: 'Internal server error' }));
+        .catch(() => res.status(500).json({ message: 'Internal server error' }));
 });
 
 module.exports = router;

@@ -1,12 +1,15 @@
 module.exports = {
     "env": {
-        "es6": true
+        "es6": true,
+        "mocha": true,
+        "node": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
         "sourceType": "module"
     },
     "globals": {
+        "document": true,
         "require": true,
         "process": true,
         "exports": true,
@@ -36,6 +39,7 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-console": "off",
     }
 };

@@ -3,27 +3,27 @@ const chaiHttp = require('chai-http');
 
 const { app, runServer, closeServer } = require('../server');
 
-const should = chai.should();
+chai.should();
 
 chai.use(chaiHttp);
 
 const newQuiz =
     {
-        "name": "How to Train Your Dragon",
-        "questions": [{
-            "question": "What is Art for?",
-            "correct": 1,
-            "answers": ["A catharis for our emotions", "To embody the most ethical ideas", "To teach us to be our 'super' selves", "For expressing what words can never fully do"]
+        'name': 'How to Train Your Dragon',
+        'questions': [{
+            'question': 'What is Art for?',
+            'correct': 1,
+            'answers': ['A catharis for our emotions', 'To embody the most ethical ideas', 'To teach us to be our "super" selves', 'For expressing what words can never fully do']
         },
         {
-            "question": "Which pastime seems appealing to you?",
-            "correct": 1,
-            "answers": ["Backgammon", "Dinner parties", "Reclining in a chair with a glass of milk", "Billards"]
+            'question': 'Which pastime seems appealing to you?',
+            'correct': 1,
+            'answers': ['Backgammon', 'Dinner parties', 'Reclining in a chair with a glass of milk', 'Billards']
         },
         {
-            "question": "What is reason for?",
-            "correct": 1,
-            "answers": ["Reason is a slave to the emotions", "To help us make moral choices", "To give understanding to the emotions", "Reason is faulty. We privilege certain ideas over others"]
+            'question': 'What is reason for?',
+            'correct': 1,
+            'answers': ['Reason is a slave to the emotions', 'To help us make moral choices', 'To give understanding to the emotions', 'Reason is faulty. We privilege certain ideas over others']
         }]
     };
 
@@ -72,7 +72,7 @@ describe('Quizzes', function () {
     });
 
     it('should edit a quiz on PUT', function () {
-        newQuiz.name = "What Philosopher are You?";
+        newQuiz.name = 'What Philosopher are You?';
         return chai.request(app)
             .put(`/quizzes/${newQuiz.id}`)
             .set('content-type', 'application/json')

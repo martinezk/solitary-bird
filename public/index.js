@@ -23,7 +23,7 @@ function displayScore() {
 var QUIZZES_URL = '/quizzes';
 var QUIZZES = [];
 
-function displayQuizQuestions(quizIndex) {
+function displayQuizQuestions(quizIndex) { // eslint-disable-line
     var quiz = QUIZZES[quizIndex];
     for (var i = 0; i < quiz.questions.length; i++) {
         var question = quiz.questions[i];

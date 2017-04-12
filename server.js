@@ -33,7 +33,7 @@ function runServer(databaseUrl = DATABASE_URL, port = PORT) {
 }
 if (require.main === module) {
     runServer().catch(err => console.error(err));
-};
+}
 
 function closeServer() {
     return mongoose.disconnect().then(() => {
