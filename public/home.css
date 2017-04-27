@@ -1,0 +1,78 @@
+/*background*/
+body {
+    background-color: dodgerblue;
+}
+.logo-img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+img {
+    height: 35px;
+    padding-left: 117px;
+}
+/*sign-up area*/
+.main{
+    background-color: white;
+    height: 425px;
+    width: 320px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 40px;
+    padding-left: 40px;
+    border-radius: 5px;
+    font-family:sans-serif;
+}
+.signup-form h1{
+    font-size: 30px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.signup-form label {
+    display: block;
+    font-size: 17px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+.signup-form input, button{
+    height: 50px;
+    border-radius: 5px;
+}
+.signup-form input{
+    width: 303px;
+    border: 2px solid #cec6c6;
+    padding-left: 8px;
+    font-size: 17px;
+}
+
+.signup-form button{
+    border: 2px solid #3CB371;
+    background-color: #3CB371;
+    width: 316px;
+    margin-top: 20px;    
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.signup-form p, a{
+    text-align: center;
+    color: gray;
+    margin: 4px;
+}
+/*bottom link*/
+.login-link p {
+    text-align: center;
+    font-family: sans-serif;
+    padding-top: 20px;
+    font-weight: bold;
+    color: white;
+}
+.white-link{
+    color: white;
+
+}
