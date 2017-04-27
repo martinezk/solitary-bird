@@ -1,22 +1,23 @@
 /*background*/
 body {
-    background-color: dodgerblue;
+    background-color: #FEE071;
 }
 .logo-img {
-    margin-left: auto;
+	margin-left: auto;
     margin-right: auto;
+	text-align: center;
     width: 400px;
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-top: 30px;
+    padding-bottom: 25px;
 }
 img {
-    height: 35px;
-    padding-left: 117px;
+	width: 145px;
+    height: 125px;
 }
 /*sign-up area*/
 .main{
     background-color: white;
-    height: 425px;
+    height: 410px;
     width: 320px;
     margin-right: auto;
     margin-left: auto;
@@ -26,7 +27,7 @@ img {
     font-family:sans-serif;
 }
 .signup-form h1{
-    font-size: 30px;
+    font-size: 22px;
     text-align: center;
     padding-top: 30px;
     padding-bottom: 10px;
@@ -49,8 +50,8 @@ img {
 }
 
 .signup-form button{
-    border: 2px solid #3CB371;
-    background-color: #3CB371;
+    border: 2px solid #000;
+    background-color: #000;
     width: 316px;
     margin-top: 20px;    
     color: white;
