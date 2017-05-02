@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
 </head>
+
 <body>
   <header class="header">
     <nav class="menu">
@@ -18,17 +19,20 @@
   <section class="main">
     <h1>Solitary Bird</h1>
     <img src="cowbird.png" alt="Logo">
+    <h2>Take a Quiz</h2>
   </section>
-  <section class="about-page">
-    <h2>ABOUT SOLITARY BIRD</h2>
-    <p>Solitary Bird is devoted to introducing ideas to people outside of the academic world by creating fun, educational content for people at all walks of life.
-    You can stimulate and expand your mind and meet other curious, open-minded people in an welcoming atmosphere.
-    Solitary Bird is a place that allows for serendipity on the web.  Headquartered in Falls Church, VA.</p>
-    <h2>TECHNOLOGY</h2>
-    <p> Solitary Bird uses the following resources: HTML, CSS, Javascript, jQuery, Node.js, 
-        Express, Heroku and Travis CI</p>
-    <h2>BUILD INFO</h2>
-    <p>Github Repo: <a href="https://github.com/martinezk/solitary-bird">github.com/martinezk/solitary-bird</a></p>
+  <section class="quiz center">
   </section>
+  <section class="end">
+    <div class="finalscore hidden">
+        <h2> Your final score: <span class="score"></span></h2>
+    </div>
+    <div class= "buttons">
+        <button id= "next" class="hidden" type="submit">Next</button>
+        <button id= "start-over" class="hidden" type="submit">Start Over</button>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script type="text/javascript" src="index.js"></script>
 </body>
 </html>

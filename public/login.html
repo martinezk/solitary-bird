@@ -4,13 +4,14 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="home.css">
+     <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
 </head>
 <body>
     <div class="logo-img">
         <a href="/"><img src="headline.png"></a>
     </div>
     <div class="main">
-        <form class="signup-form" action="/signup" method="post">
+        <form class="signup-form">
             <fieldset>
                 <h1>Create an Account</h1>
                 <label for="email">Email</label>
@@ -18,12 +19,17 @@
                 <label for="password">Password</label>
                 <input placeholder="Secretw0rd" type="password" name="password">
             </fieldset>    
-            <button type="submit">Sign Up</button>
-            <a href="/forgot-password/new"><p>Forgot Password?</p></a>
+            <button onclick="return alertComingSoon()">Sign Up</button>
+            <a href="#" onclick="return alertComingSoon()"><p>Forgot Password?</p></a>
         </form>
     </div>
     <div class="login-link">
-        <p>Already have an account? <a class="white-link" href="#">Login</a></p>
+        <p>Already have an account? <a class="white-link" href="#" onclick="return alertComingSoon()">Login</a></p>
     </div>
+    <script>
+        function alertComingSoon(){
+            alert("Hello!\nThis feature is coming soon\nClick on the bird to return Home");
+        }
+    </script>
 </body>
 </html>

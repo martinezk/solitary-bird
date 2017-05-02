@@ -3,15 +3,15 @@ body {
     background-color: #FEE071;
 }
 .logo-img {
-	margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
-	text-align: center;
+    text-align: center;
     width: 400px;
     padding-top: 30px;
     padding-bottom: 25px;
 }
 img {
-	width: 145px;
+    width: 145px;
     height: 125px;
 }
 /*sign-up area*/
@@ -24,7 +24,7 @@ img {
     padding-right: 40px;
     padding-left: 40px;
     border-radius: 5px;
-    font-family:sans-serif;
+    font-family:"Merriweather", cursive;
 }
 .signup-form h1{
     font-size: 22px;
@@ -47,6 +47,7 @@ img {
     border: 2px solid #cec6c6;
     padding-left: 8px;
     font-size: 17px;
+    font-family: "Merriweather", cursive;
 }
 
 .signup-form button{
@@ -59,16 +60,18 @@ img {
     font-weight: bold;
     padding-top: 10px;
     padding-bottom: 10px;
+    font-family: "Merriweather", cursive;
 }
 .signup-form p, a{
     text-align: center;
     color: gray;
     margin: 4px;
 }
+
 /*bottom link*/
 .login-link p {
     text-align: center;
-    font-family: sans-serif;
+    font-family: "Merriweather", cursive;
     padding-top: 20px;
     font-weight: bold;
     color: white;

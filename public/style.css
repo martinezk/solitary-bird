@@ -50,7 +50,10 @@ h3{
   width: 500px;
   margin-left: auto;
   margin-right: auto; 
-  padding-bottom: 60px; 
+  padding-bottom: 25px; 
+}
+.about a, .about-page a{
+  text-decoration: underline;
 }
 .about-page{
   margin-left: auto;
@@ -101,19 +104,24 @@ p{
   text-align: center;
 }
 .full-width{
-  width: 1050px;
+  width: 1030px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 190px;
 }
-.third-width{
-  width: 350px;
+.third-width {
+  width: 320px;
   float: left;
+}
+.middle {
+  margin-right: 30px;
 }
 .fa {
   display: inherit;
   width: 64px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 20px;
 }
 
 
@@ -130,8 +138,7 @@ p{
   vertical-align: bottom;
   margin-right: 6px;
   margin-left: 6px;
-  /*background-repeat: no-repeat;
-  background-image: url(https://placekitten.com/200/200?image=13)*/
+  cursor: pointer;
 }
 #next, #start-over {
     border: 1px solid black;
