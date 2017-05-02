@@ -9,6 +9,7 @@ app.use(express.static('public'));
 
 app.use('/quizzes', quizRouter);
 
+
 mongoose.Promise = global.Promise;
 
 let server;
