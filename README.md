@@ -16,10 +16,6 @@ This app is content-driven and allows users to browse available quizzes, take a 
 ##Technology
 Solitary Bird uses the following resources: HTML, CSS, Javascript, jQuery, Node.js, Express, Heroku and Travis CI
 
-* HTML
-* CSS
-* JS
-
 ##Future features
 Constructing process of creating verified educators to ensure accuracy of content
 Adding ability for verified educators to submit quizzes through a form
