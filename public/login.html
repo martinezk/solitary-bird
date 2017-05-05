@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="home.css">
-     <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
 </head>
+
 <body>
     <div class="logo-img">
         <a href="/"><img src="headline.png"></a>
@@ -18,18 +20,21 @@
                 <input id="email" placeholder="yourname@email.com" type="email" name="email">
                 <label for="password">Password</label>
                 <input placeholder="Secretw0rd" type="password" name="password">
-            </fieldset>    
+            </fieldset>
             <button onclick="return alertComingSoon()">Sign Up</button>
-            <a href="#" onclick="return alertComingSoon()"><p>Forgot Password?</p></a>
+            <a href="#" onclick="return alertComingSoon()">
+                <p>Forgot Password?</p>
+            </a>
         </form>
     </div>
     <div class="login-link">
         <p>Already have an account? <a class="white-link" href="#" onclick="return alertComingSoon()">Login</a></p>
     </div>
     <script>
-        function alertComingSoon(){
+        function alertComingSoon() {
             alert("Hello!\nThis feature is coming soon\nClick on the bird to return Home");
         }
     </script>
 </body>
+
 </html>
