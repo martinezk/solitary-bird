@@ -81,7 +81,7 @@ function createQuestion(questionJson, index) {
                 <li class= "answers"><input type="radio" name="ans-${index}" value="3"><label>${questionJson.answers[2]}</label></li>
                 <li class= "answers"><input type="radio" name="ans-${index}" value="4"><label>${questionJson.answers[3]}</label></li>
             </ul>
-            <p> ${index += 1} of 3</p>
+            <p> ${index += 1} of 4</p>
         </div>
     `;
 }
