@@ -2,6 +2,7 @@
 //--store answer total
 var quizTotal = 0;
 var currentPage = 1;
+var numberOfPages = 0;
 
 //state modification functions
 //--if an answer is chosen, add to quiz total
@@ -12,7 +13,7 @@ function userChoice(selectedAns) {
 
 //render functions
 function displayScore() {
-    if (currentPage > 3) {
+    if (currentPage > numberOfPages) {
         $('.score').text(quizTotal);
         $('#start-over').removeClass('hidden');
         $('.finalscore').removeClass('hidden');
@@ -25,9 +26,10 @@ var QUIZZES = [];
 
 function displayQuizQuestions(quizIndex) { // eslint-disable-line
     var quiz = QUIZZES[quizIndex];
+    numberOfPages = quiz.questions.length;
     for (var i = 0; i < quiz.questions.length; i++) {
         var question = quiz.questions[i];
-        var html = createQuestion(question, i);
+        var html = createQuestion(question, i, quiz.questions.length);
         $('.quiz').append(html);
     }
     $('.questions').first().toggleClass('hidden').addClass('show');
@@ -71,7 +73,7 @@ function displayQuizzes(quizzes) {
     $('.quiz').append(html);
 }
 
-function createQuestion(questionJson, index) {
+function createQuestion(questionJson, index, length) {
     return `
         <div class="questions hidden">
             <h2 class="quiz-title"> ${questionJson.question} </h2>
@@ -81,7 +83,7 @@ function createQuestion(questionJson, index) {
                 <li class= "answers"><input type="radio" name="ans-${index}" value="3"><label>${questionJson.answers[2]}</label></li>
                 <li class= "answers"><input type="radio" name="ans-${index}" value="4"><label>${questionJson.answers[3]}</label></li>
             </ul>
-            <p> ${index += 1} of 4</p>
+            <p> ${index += 1} of ${length}</p>
         </div>
     `;
 }
