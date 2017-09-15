@@ -9,8 +9,20 @@ var numberOfPages = 0;
 function userChoice(selectedAns) {
     quizTotal += selectedAns;
     console.log(quizTotal);
+    if (quizTotal===3 || quizTotal===4) {
+        console.log("You are most like David Hume");
+    }
+    else if (quizTotal===5 || quizTotal===6 ){
+        console.log("You are most like Immanuel Kant");
+    }
+    else if (quizTotal===7 || quizTotal===8 ){
+        console.log("You are most like Friedrich Nietsche");
+    }
+    else {
+        console.log("You are most like Jacques Derrida");
+    }
+    
 }
-
 //render functions
 function displayScore() {
     if (currentPage > numberOfPages) {

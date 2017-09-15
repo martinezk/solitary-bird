@@ -12,7 +12,7 @@ app.use('/quizzes', quizRouter);
 
 mongoose.Promise = global.Promise;
 
-let server;
+let server; 
 
 function runServer(databaseUrl = DATABASE_URL, port = PORT) {
     return new Promise((resolve, reject) => {
